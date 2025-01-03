@@ -81,6 +81,12 @@ body {
 main {
   min-width: 360px;
   margin: 0 20px;
+  border: solid 1px red;
+  height: 800px;
+}
+
+.contact-form {
+  border: solid 1px yellow;
 }
 
 .attribution {
