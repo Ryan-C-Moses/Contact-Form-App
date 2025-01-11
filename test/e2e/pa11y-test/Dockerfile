@@ -1,17 +1,16 @@
 # Use the official Node.js image
 FROM node:lts
 
-# Install necessary system dependencies for Puppeteer
+# Install Chromium and necessary dependencies
 RUN apt-get update && apt-get install -y \
     wget curl ca-certificates unzip \
     libx11-xcb1 libglib2.0-0 libnss3 libgdk-pixbuf2.0-0 \
-    libatk1.0-0 libcups2 libxss1 libasound2-dev \
-    libx11-dev libatk-bridge2.0-0 libgtk-3-0 libgbm-dev \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+    libatk1.0-0 libcups2 libxss1 libasound2 libx11-dev \
+    libnss3-dev libatk-bridge2.0-0 libgtk-3-0 libgbm-dev \
+    chromium
 
 # Set Puppeteer to run without the sandbox
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Set the working directory
