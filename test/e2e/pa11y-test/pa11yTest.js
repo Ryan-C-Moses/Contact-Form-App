@@ -13,17 +13,30 @@ const webpage = "https://ryan-c-moses.github.io/Contact-Form-App/";
 
   const page = await browser.newPage();
   await page.goto(webpage);
-  await test(webpage, browser);
+  
+  // Passing correct options for Pa11y test
+  await test(webpage);
 
   await browser.close();
 })();
 
-const test = async (webpage, opts) => {
-  const results = await pa11y(webpage, { opts });
-  fs.writeFileSync(
-    "reports/pa11y-accessibility-report.json",
-    JSON.stringify(results, null, 2)
-  );
-  console.log(results.issues);
-  console.log("\n\n\n\nReport saved to accessibility-report.json");
+const test = async (webpage) => {
+  try {
+    const results = await pa11y(webpage, {
+      browser: {
+        launch: puppeteer.launch,
+        args: ["--no-sandbox", "--disable-setuid-sandbox", "--headless"], // Pa11y needs a browser instance with proper flags
+      }
+    });
+    
+    // Save the results to a JSON file
+    fs.writeFileSync(
+      "reports/pa11y-accessibility-report.json",
+      JSON.stringify(results, null, 2)
+    );
+    console.log(results.issues); // Log issues to the console
+    console.log("\n\n\n\nReport saved to accessibility-report.json");
+  } catch (error) {
+    console.error('Error during accessibility test:', error);
+  }
 };
