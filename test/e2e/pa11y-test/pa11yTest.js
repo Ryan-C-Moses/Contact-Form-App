@@ -33,5 +33,6 @@ const test = async (webpage, browser) => {
     console.log("\n\n\n\nReport saved to accessibility-report.json");
   } catch (error) {
     console.error("Error during accessibility test:", error);
+    throw new Error(error.message);
   }
 };
