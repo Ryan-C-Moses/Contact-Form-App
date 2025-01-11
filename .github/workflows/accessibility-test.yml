@@ -19,7 +19,7 @@ jobs:
         run: docker builder prune --all
 
       - name: Build Docker Image
-        run: docker build -t pa11y-test -f test/e2e/pa11y-test/DockerFile.app test/e2e/pa11y-test
+        run: docker build -t pa11y-test test/e2e/pa11y-test test/e2e/pa11y-test
 
       - name: Run Pa11y tests in Docker container
         run: docker run --rm pa11y-test
