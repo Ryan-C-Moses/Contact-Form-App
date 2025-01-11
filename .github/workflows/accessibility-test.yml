@@ -1,0 +1,27 @@
+name: Accessibility Test
+
+on:
+  push:
+    branches:
+      - main
+      - CFA-1-add-css
+  pull_request:
+
+jobs:
+  pa11y:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts'
+
+      - name: Install dependencies
+        run: npm install pa11y fs
+
+      - name: Run Pa11y tests
+        run: node pa11yTest.js
