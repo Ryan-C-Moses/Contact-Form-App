@@ -17,7 +17,7 @@ WORKDIR /app
 RUN npm install puppeteer pa11y fs
 
 # Copy the test script
-COPY test/e2e/pa11y-test/pa11yTest.js /app/test/e2e
+COPY . .
 
 # Run the tests
 CMD ["node", "app/test/e2e/pa11yTest.js"]  
