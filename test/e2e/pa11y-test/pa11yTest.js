@@ -6,6 +6,7 @@ const webpage = "https://ryan-c-moses.github.io/Contact-Form-App/";
 
 (async () => {
   const browser = await puppeteer.launch({
+    executablePath: "/usr/bin/chromium",
     headless: true, // Run in headless mode
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // Add the no-sandbox flag
   });
