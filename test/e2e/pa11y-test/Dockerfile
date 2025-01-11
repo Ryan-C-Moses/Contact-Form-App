@@ -17,7 +17,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 WORKDIR /app
 
 # Install Node.js dependencies
-RUN npm install puppeteer pa11y fs
+RUN npm install puppeteer-core pa11y fs
 
 # Copy the test script
 COPY ./pa11yTest.js .

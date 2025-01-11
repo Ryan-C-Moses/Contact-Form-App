@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const pa11y = require("pa11y");
 const fs = require("fs");
 
@@ -22,9 +22,7 @@ const webpage = "https://ryan-c-moses.github.io/Contact-Form-App/";
 
 const test = async (webpage, browser) => {
   try {
-    const results = await pa11y(webpage, {
-      browser,
-    });
+    const results = await pa11y(webpage, { browser });
 
     // Save the results to a JSON file
     fs.writeFileSync(
