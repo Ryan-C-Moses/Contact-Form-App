@@ -12,13 +12,13 @@ const webpage = "https://ryan-c-moses.github.io/Contact-Form-App/";
 
   const page = await browser.newPage();
   await page.goto(webpage);
-  await test(webpage);
+  await test(webpage, browser);
 
   await browser.close();
 })();
 
-const test = async (webpage) => {
-  const results = await pa11y(webpage);
+const test = async (webpage, opts) => {
+  const results = await pa11y(webpage, { opts });
   fs.writeFileSync(
     "reports/pa11y-accessibility-report.json",
     JSON.stringify(results, null, 2)
