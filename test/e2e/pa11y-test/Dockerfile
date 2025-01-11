@@ -16,8 +16,8 @@ WORKDIR /app
 # Install Node.js dependencies
 RUN npm install puppeteer pa11y fs
 
-# Copy the application code
-COPY . .
+# Copy the test script
+COPY test/e2e/pa11yTest.js /app/test/e2e/
 
 # Run the tests
 CMD ["node", "test/e2e/pa11yTest.js"]  
