@@ -20,7 +20,7 @@ const webpage = "https://ryan-c-moses.github.io/Contact-Form-App/";
   await browser.close();
 })();
 
-const test = async (webpage) => {
+const test = async (webpage, browser) => {
   try {
     const results = await pa11y(webpage, {
       browser,
