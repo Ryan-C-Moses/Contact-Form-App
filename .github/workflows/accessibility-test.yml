@@ -24,4 +24,4 @@ jobs:
         run: npm install pa11y fs
 
       - name: Run Pa11y tests
-        run: node pa11yTest.js
+        run: node test/e2e/pa11yTest.js
