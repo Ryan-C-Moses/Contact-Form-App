@@ -19,5 +19,8 @@ RUN npm install puppeteer pa11y fs
 # Copy the test script
 COPY . .
 
+# Change to test directory
+RUN cd test/e2e/pa11y-test
+
 # Run the tests
-CMD ["node", "app/test/e2e/pa11yTest.js"]  
+CMD ["node", "pa11yTest.js"]  
