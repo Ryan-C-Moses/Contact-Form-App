@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ["../../../index.html"],
+      staticDistDir: ["../../../index.html"],
       startServerCommand: "npm start",
     },
     assert: {
