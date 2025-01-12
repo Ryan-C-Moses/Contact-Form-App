@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - CFA-1-add-css
   pull_request:
 
 jobs:
