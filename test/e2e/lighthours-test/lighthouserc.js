@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      url: ["https://ryan-c-moses.github.io/Contact-Form-App/"],
+      url: ["../../../index.html"],
       startServerCommand: "npm start",
     },
     assert: {
