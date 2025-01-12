@@ -1,0 +1,42 @@
+name: Accessibility Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli
+
+      - name: Run Lighthouse Accessibility Test
+        run: lhci autorun
+
+  pa11y:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Clear Docker Build Cache
+        run: docker builder prune --all
+
+      - name: Build Docker Image
+        run: docker build -t pa11y-test test/e2e/pa11y-test
+
+      - name: Run Pa11y tests in Docker container
+        run: docker run --rm pa11y-test
