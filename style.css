@@ -81,7 +81,8 @@ h6 {
 
 /* END CSS RESET */
 
-/* VARIABLES */
+/* CUSTOM VARIABLES */
+
 :root {
   --green-200-lighter: hsl(148, 38%, 91%);
   --green-600-medium: hsl(169, 82%, 27%);
@@ -91,28 +92,35 @@ h6 {
   --red: hsl(0, 66%, 54%);
 }
 
+/* END CUSTOM VARIABLES */
+
 html {
   font-family: "Karla", serif;
+  font-weight: 400;
+  color: var(--grey-900-darker);
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--green-200-lighter);
 }
 
 main {
-  min-width: 360px;
+  min-width: 325px;
   margin: 40px 20px;
   padding: 25px 22px;
-  border: solid 1px red;
+  border: none;
   border-radius: 18px;
+  background-color: var(--white);
   min-height: 800px;
 }
 
 .input-box {
   height: 48px;
   width: 100%;
+  border: solid 1px var(--grey-500-medium);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -124,6 +132,7 @@ main {
 }
 
 .title {
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -157,6 +166,7 @@ main {
   width: 1rem;
   height: 1rem;
   border: 1px solid #ccc;
+  border: dashed 1px var(--green-200-lighter);
   border-radius: 50%;
   margin-left: 20px;
   margin-right: 12px;
@@ -170,8 +180,13 @@ main {
   width: 100%;
   height: 250px;
   padding: 4px 8px;
+  border: solid 1px var(--grey-500-medium);
   border-radius: 8px;
   resize: none;
+}
+
+.contact-form__input6 {
+  border: none;
 }
 
 .contact-form__input6 > label {
@@ -191,7 +206,10 @@ main {
 .contact-form__button {
   height: 58px;
   width: 100%;
+  color: var(--white);
+  font-weight: 700;
   background-color: hsl(169, 82%, 27%);
+  border: none;
   border-radius: 8px;
   margin-bottom: 20px;
 }
