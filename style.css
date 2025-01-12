@@ -117,10 +117,6 @@ main {
   margin-bottom: 20px;
 }
 
-.contact-form {
-  border: solid 1px yellow;
-}
-
 .contact-form__input1 label {
   margin-bottom: 10px;
 }
@@ -131,10 +127,6 @@ main {
 
 .contact-form__input3 label {
   margin-bottom: 10px;
-}
-
-.contact-form__input4 {
-  border: solid 1px green;
 }
 
 .contact-form__input4 > label {
@@ -149,7 +141,6 @@ main {
   height: 100%;
   display: flex;
   align-items: center;
-  border: solid 1px red;
 }
 
 .contact-form__input4 input[type="radio"] {
@@ -169,7 +160,6 @@ main {
   width: 100%;
   height: 250px;
   padding: 4px 8px;
-  border: 2px solid #ccc;
   border-radius: 8px;
   resize: none;
 }
@@ -178,7 +168,6 @@ main {
   height: 100%;
   display: flex;
   align-items: center;
-  border: solid 1px palevioletred;
 }
 
 .contact-form__input6 input[type="checkbox"] {
