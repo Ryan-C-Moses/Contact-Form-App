@@ -163,13 +163,27 @@ main {
 }
 
 .contact-form__input4 input[type="radio"] {
-  width: 1rem;
-  height: 1rem;
-  border: 1px solid #ccc;
-  border: dashed 1px var(--green-200-lighter);
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.contact-form__input4__label__row {
+  width: 100%;
+  position: relative;
+  padding-left: 50px;
+}
+
+.radio_btn_circle {
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: solid 2px var(--green-200-lighter);
   border-radius: 50%;
-  margin-left: 20px;
-  margin-right: 12px;
 }
 
 .contact-form__input5 > label {
