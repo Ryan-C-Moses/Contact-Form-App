@@ -136,6 +136,11 @@ main {
   margin-bottom: 20px;
 }
 
+.contact-form__asterisk {
+  color: var(--green-600-lighter);
+  display: inline;
+}
+
 .contact-form__input1 label {
   margin-bottom: 10px;
 }
@@ -199,22 +204,43 @@ main {
   resize: none;
 }
 
+.radio_btn_checkbox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: solid 2px var(--green-200-lighter);
+}
+
 .contact-form__input6 {
+  height: 57px;
+  justify-content: center;
   border: none;
 }
 
 .contact-form__input6 > label {
-  height: 100%;
-  display: flex;
-  align-items: center;
+  height: 50%;
+  position: relative;
+  padding-left: 35px;
 }
 
 .contact-form__input6 input[type="checkbox"] {
-  height: 1rem;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  /* height: 1rem;
   width: 1rem;
   margin-right: 15px;
-  border-radius: 0%;
-  word-wrap: break-word;
+  border-radius: 0%; */
+}
+
+.contact-form__input6 label::after {
+  content: ' *';
+  color: var(--green-600-lighter);
 }
 
 .contact-form__button {

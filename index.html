@@ -28,25 +28,33 @@
         <!-- Comments in this form are for validation -->
 
         <div class="contact-form__input1 form-input">
-          <label for="firstName">First Name *</label>
+          <label for="firstName"
+            >First Name <span class="contact-form__asterisk">*</span></label
+          >
           <input class="input-box" type="text" id="firstName" required />
           <!-- This field is required -->
         </div>
 
         <div class="contact-form__input2 form-input">
-          <label for="lastName">Last Name *</label>
+          <label for="lastName"
+            >Last Name <span class="contact-form__asterisk">*</span></label
+          >
           <input class="input-box" type="text" id="lastName" required />
           <!-- This field is required -->
         </div>
 
         <div class="contact-form__input3 form-input">
-          <label for="email">Email Address *</label>
+          <label for="email"
+            >Email Address <span class="contact-form__asterisk">*</span></label
+          >
           <input class="input-box" type="email" id="email" required />
           <!-- Please enter a valid email address -->
         </div>
 
         <div class="contact-form__input4 form-input">
-          <label for="queryType">Query Type *</label>
+          <label for="queryType"
+            >Query Type <span class="contact-form__asterisk">*</span></label
+          >
           <div class="input-box">
             <label for="generalEnquiry">
               <div class="contact-form__input4__label__row">
@@ -70,15 +78,18 @@
         </div>
 
         <div class="contact-form__input5 form-input">
-          <label for="message">Message *</label>
+          <label for="message"
+            >Message <span class="contact-form__asterisk">*</span></label
+          >
           <textarea id="message" required></textarea>
           <!-- This field is required -->
         </div>
 
         <div class="contact-form__input6 form-input input-box">
           <label for="consent">
+            <span class="radio_btn_checkbox"></span>
             <input type="checkbox" id="consent" required />
-            I consent to being contacted by the team *</label
+            I consent to being contacted by the team</label
           >
           <!-- To submit this form, please consent to being contacted -->
         </div>
