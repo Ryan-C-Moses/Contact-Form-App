@@ -137,7 +137,7 @@ main {
 }
 
 .contact-form__asterisk {
-  color: var(--green-600-lighter);
+  color: var(--green-600-medium);
   display: inline;
 }
 
@@ -211,13 +211,54 @@ main {
   left: 0px;
   width: 1.2rem;
   height: 1.2rem;
-  border: solid 2px var(--green-200-lighter);
+  border: solid 2px var(--grey-500-medium);
 }
 
 .contact-form__input6 {
-  height: 57px;
+  width: 100%;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
   border: none;
+}
+
+/* On mouse-over, add green background color */
+.contact-form__input6:hover input ~ .radio_btn_checkbox {
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a green background */
+.contact-form__input6 input:checked ~ .radio_btn_checkbox {
+  background-color: var(--green-600-medium);
+  border-color: var(--green-600-medium);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.radio_btn_checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  border: solid 2px var(--grey-500-medium);
+}
+
+/* Show the checkmark when checked */
+.contact-form__input6 input:checked ~ .radio_btn_checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.contact-form__input6 .radio_btn_checkbox:after {
+  left: 52%;
+  top: 45%;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .contact-form__input6 > label {
@@ -232,15 +273,12 @@ main {
   cursor: pointer;
   height: 0;
   width: 0;
-  /* height: 1rem;
-  width: 1rem;
-  margin-right: 15px;
-  border-radius: 0%; */
+  
 }
 
 .contact-form__input6 label::after {
   content: ' *';
-  color: var(--green-600-lighter);
+  color: var(--green-600-medium);
 }
 
 .contact-form__button {
