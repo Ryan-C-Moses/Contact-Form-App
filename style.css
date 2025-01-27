@@ -181,6 +181,11 @@ main {
   padding-left: 50px;
 }
 
+/* On mouse-over, add green background color */
+.contact-form__input4 .input-box:hover input ~ .radio_btn_circle {
+  background-color: #eee;
+}
+
 .radio_btn_circle {
   position: absolute;
   top: 3px;
