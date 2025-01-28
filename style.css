@@ -215,6 +215,11 @@ main {
   transition: all 0.5s ease-in;
 }
 
+.contact-form__input4 .input-box:has(input[type="radio"]:checked) {
+  background-color: var(--green-200-lighter);
+  border: solid 1px var(--green-600-medium);
+}
+
 /* Show the indicator when checked */
 .contact-form__input4 input:checked ~ .radio_btn_circle:after {
   display: block;
@@ -254,7 +259,8 @@ main {
   transition: border-color 0.2s ease;
 }
 
-.contact-form__input5 textarea:focus:hover, .contact-form__input5 textarea:active {
+.contact-form__input5 textarea:focus:hover,
+.contact-form__input5 textarea:active {
   border: solid 1px var(--green-600-medium);
 }
 
