@@ -347,10 +347,15 @@ main {
   width: 100%;
   color: var(--white);
   font-weight: 700;
-  background-color: hsl(169, 82%, 27%);
+  background-color: var(--green-600-medium);
   border: none;
   border-radius: 8px;
   margin-bottom: 20px;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.contact-form__button:hover {
+  background-color: hsl(169deg 92.15% 13.79%);
 }
 
 .attribution {
