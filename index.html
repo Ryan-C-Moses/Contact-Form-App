@@ -23,52 +23,73 @@
     Thanks for completing the form. We'll be in touch soon! 
     </div> -->
     <main>
-      <h2>Contact Us</h2>
+      <h2 class="title">Contact Us</h2>
       <form class="contact-form" action="#">
         <!-- Comments in this form are for validation -->
 
-        <div class="contact-form__input1">
-          <label for="firstName">First Name *</label>
-          <input type="text" id="firstName" required />
+        <div class="contact-form__input1 form-input">
+          <label for="firstName"
+            >First Name <span class="contact-form__asterisk">*</span></label
+          >
+          <input class="input-box" type="text" id="firstName" required />
           <!-- This field is required -->
         </div>
 
-        <div class="contact-form__input2">
-          <label for="lastName">Last Name *</label>
-          <input type="text" id="lastName" required />
+        <div class="contact-form__input2 form-input">
+          <label for="lastName"
+            >Last Name <span class="contact-form__asterisk">*</span></label
+          >
+          <input class="input-box" type="text" id="lastName" required />
           <!-- This field is required -->
         </div>
 
-        <div class="contact-form__input3">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" required />
+        <div class="contact-form__input3 form-input">
+          <label for="email"
+            >Email Address <span class="contact-form__asterisk">*</span></label
+          >
+          <input class="input-box" type="email" id="email" required />
           <!-- Please enter a valid email address -->
         </div>
 
-        <div class="contact-form__input4">
-          <label for="queryType">Query Type *</label>
-          <div>
-            <input type="checkbox" name="generalQuery" id="queryType" />
-            <label for="generalQuery">General Query</label>
+        <div class="contact-form__input4 form-input">
+          <p 
+            >Query Type <span class="contact-form__asterisk">*</span></p
+          >
+          <div class="input-box">
+            <label for="queryType">
+              <div class="contact-form__input4__label__row">
+                <input type="radio" name="queryType" value="generalEnquiry" id="queryType" />
+                <span class="radio_btn_circle"></span>
+                General Enquiry
+              </div>
+            </label>
             <!-- This field is required -->
           </div>
-          <div>
-            <input type="checkbox" name="supportRequest" id="queryType" />
-            <label for="supportRequest">Support Request</label>
+          <div class="input-box">
+            <label for="queryType">
+              <div class="contact-form__input4__label__row">
+                <input type="radio" name="queryType" value="supportRequest" id="queryType" />
+                <span class="radio_btn_circle"></span>
+                Support Request
+              </div>
+            </label>
             <!-- Please select a query type -->
           </div>
         </div>
 
-        <div class="contact-form__input5">
-          <label for="message">Message *</label>
+        <div class="contact-form__input5 form-input">
+          <label for="message"
+            >Message <span class="contact-form__asterisk">*</span></label
+          >
           <textarea id="message" required></textarea>
           <!-- This field is required -->
         </div>
 
-        <div class="contact-form__input6">
-          <input type="checkbox" id="consent" required />
-          <label for="consent"
-            >I consent to being contacted by the team *</label
+        <div class="contact-form__input6 form-input">
+          <label for="consent">
+            <input type="checkbox" id="consent" required />
+            <span class="radio_btn_checkbox"></span>
+            I consent to being contacted by the team</label
           >
           <!-- To submit this form, please consent to being contacted -->
         </div>
@@ -79,7 +100,7 @@
       <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="https://github.com/Ryan-C-Moses">Ryan C. Moses</a>.
       </div>
     </main>
   </body>
