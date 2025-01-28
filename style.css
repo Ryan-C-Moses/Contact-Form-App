@@ -153,7 +153,7 @@ main {
   margin-bottom: 10px;
 }
 
-.contact-form__input4 > label {
+.contact-form__input4 > p {
   margin-bottom: 10px;
 }
 
@@ -171,19 +171,14 @@ main {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .contact-form__input4__label__row {
   width: 100%;
   position: relative;
   padding-left: 50px;
-}
-
-/* On mouse-over, add green background color */
-.contact-form__input4 .input-box:hover input ~ .radio_btn_circle {
-  background-color: #eee;
 }
 
 .radio_btn_circle {
@@ -194,6 +189,42 @@ main {
   height: 1.2rem;
   border: solid 2px var(--green-200-lighter);
   border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+/* On mouse-over, add grey background color */
+.contact-form__input4 .input-box:hover input ~ .radio_btn_circle {
+  background-color: #eee;
+}
+
+/* When the indicator is checked, add a green border */
+.contact-form__input4 input[type="radio"]:checked ~ .radio_btn_circle {
+  background-color: var(--white);
+  border: solid 1.5px var(--green-600-medium);
+  transition: all 0.5s ease-in;
+}
+
+/* Show the indicator when checked */
+.contact-form__input4 input:checked ~ .radio_btn_circle:after {
+  display: block;
+}
+
+/* Create the indicator (hidden when not checked) and set border attribute */
+.radio_btn_circle:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Style the indicator */
+.contact-form__input4 .radio_btn_circle:after {
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: var(--green-600-medium);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .contact-form__input5 > label {
@@ -217,6 +248,7 @@ main {
   width: 1.2rem;
   height: 1.2rem;
   border: solid 2px var(--grey-500-medium);
+  transition: all 0.4s ease;
 }
 
 .contact-form__input6 {
@@ -229,18 +261,19 @@ main {
   border: none;
 }
 
-/* On mouse-over, add green background color */
+/* On mouse-over, add grey background color */
 .contact-form__input6:hover input ~ .radio_btn_checkbox {
   background-color: #eee;
 }
 
-/* When the checkbox is checked, add a green background */
+/* When the checkbox is checked, add a green background and border */
 .contact-form__input6 input:checked ~ .radio_btn_checkbox {
   background-color: var(--green-600-medium);
   border-color: var(--green-600-medium);
+  transition: all 0.5s ease-in;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
+/* Create the checkmark/indicator (hidden when not checked) and set border attribute */
 .radio_btn_checkbox:after {
   content: "";
   position: absolute;
@@ -278,11 +311,10 @@ main {
   cursor: pointer;
   height: 0;
   width: 0;
-  
 }
 
 .contact-form__input6 label::after {
-  content: ' *';
+  content: " *";
   color: var(--green-600-medium);
 }
 
