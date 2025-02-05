@@ -135,6 +135,31 @@ main {
   border: solid 1px var(--green-600-medium);
 }
 
+/* ERROR VALIDATION */
+
+/* input[type="text"]:invalid:not(:placeholder-shown) {
+  border: solid 1px var(--red);
+}
+
+input[type="email"]:invalid:not(:placeholder-shown) {
+  border: solid 1px var(--red);
+}
+
+textarea:invalid:not(:placeholder-shown) {
+  border: solid 1px var(--red);
+} */
+
+.error-input {
+  border: solid 1px var(--red);
+}
+
+.error-message {
+  color: var(--red);
+  margin-top: 8px;
+}
+
+/* END ERROR VALIDATION */
+
 .form-input {
   display: flex;
   flex-direction: column;
