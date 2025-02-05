@@ -31,23 +31,45 @@
           <label for="firstName"
             >First Name <span class="contact-form__asterisk">*</span></label
           >
-          <input class="input-box" type="text" id="firstName" required />
-          <!-- This field is required -->
+          <input
+            class="input-box"
+            type="text"
+            id="firstName"
+            placeholder=""
+            required
+            pattern="^(?!\s*$).+"
+          />
+          <p class="error-message">This field is required</p>
         </div>
 
         <div class="contact-form__input2 form-input">
           <label for="lastName"
             >Last Name <span class="contact-form__asterisk">*</span></label
           >
-          <input class="input-box" type="text" id="lastName" required />
-          <!-- This field is required -->
+          <input
+            class="input-box"
+            type="text"
+            id="lastName"
+            placeholder=""
+            required
+            pattern="^(?!\s*$).+"
+          />
+          <p class="error-message">This field is required</p>
         </div>
 
         <div class="contact-form__input3 form-input">
           <label for="email"
             >Email Address <span class="contact-form__asterisk">*</span></label
           >
-          <input class="input-box" type="email" id="email" autocomplete="email" required />
+          <input
+            class="input-box"
+            type="email"
+            id="email"
+            autocomplete="email"
+            placeholder=""
+            required
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+          />
           <!-- Please enter a valid email address -->
         </div>
 
@@ -89,7 +111,7 @@
           <label for="message"
             >Message <span class="contact-form__asterisk">*</span></label
           >
-          <textarea id="message" required></textarea>
+          <textarea id="message" placeholder="" required></textarea>
           <!-- This field is required -->
         </div>
 
