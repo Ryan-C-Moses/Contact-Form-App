@@ -47,18 +47,21 @@
           <label for="email"
             >Email Address <span class="contact-form__asterisk">*</span></label
           >
-          <input class="input-box" type="email" id="email" required />
+          <input class="input-box" type="email" id="email" autocomplete="email" required />
           <!-- Please enter a valid email address -->
         </div>
 
         <div class="contact-form__input4 form-input">
-          <p 
-            >Query Type <span class="contact-form__asterisk">*</span></p
-          >
+          <p>Query Type <span class="contact-form__asterisk">*</span></p>
           <div class="input-box">
-            <label for="queryType">
+            <label for="generalEnquiry">
               <div class="contact-form__input4__label__row">
-                <input type="radio" name="queryType" value="generalEnquiry" id="queryType" />
+                <input
+                  type="radio"
+                  name="queryType"
+                  value="generalEnquiry"
+                  id="generalEnquiry"
+                />
                 <span class="radio_btn_circle"></span>
                 General Enquiry
               </div>
@@ -66,9 +69,14 @@
             <!-- This field is required -->
           </div>
           <div class="input-box">
-            <label for="queryType">
+            <label for="supportRequest">
               <div class="contact-form__input4__label__row">
-                <input type="radio" name="queryType" value="supportRequest" id="queryType" />
+                <input
+                  type="radio"
+                  name="queryType"
+                  value="supportRequest"
+                  id="supportRequest"
+                />
                 <span class="radio_btn_circle"></span>
                 Support Request
               </div>
@@ -89,8 +97,8 @@
           <label for="consent">
             <input type="checkbox" id="consent" required />
             <span class="radio_btn_checkbox"></span>
-            I consent to being contacted by the team</label
-          >
+            I consent to being contacted by the team
+          </label>
           <!-- To submit this form, please consent to being contacted -->
         </div>
 
