@@ -12,7 +12,8 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/app.js" defer></script>
 
     <title>Frontend Mentor | Contact form</title>
   </head>
@@ -24,37 +25,37 @@
     </div> -->
     <main>
       <h2 class="title">Contact Us</h2>
-      <form class="contact-form" action="#">
+      <form class="contact-form" id="contact-form-id" action="#">
         <!-- Comments in this form are for validation -->
 
         <div class="contact-form__input1 form-input">
-          <label for="firstName"
+          <label for="first-name"
             >First Name <span class="contact-form__asterisk">*</span></label
           >
           <input
             class="input-box"
             type="text"
-            id="firstName"
+            id="first-name"
             placeholder=""
             required
             pattern="^(?!\s*$).+"
           />
-          <p class="error-message">This field is required</p>
+          <p class="error-message" id="fname-error">This field is required</p>
         </div>
 
         <div class="contact-form__input2 form-input">
-          <label for="lastName"
+          <label for="last-name"
             >Last Name <span class="contact-form__asterisk">*</span></label
           >
           <input
             class="input-box"
             type="text"
-            id="lastName"
+            id="last-name"
             placeholder=""
             required
             pattern="^(?!\s*$).+"
           />
-          <p class="error-message">This field is required</p>
+          <p class="error-message" id="lname-error">This field is required</p>
         </div>
 
         <div class="contact-form__input3 form-input">
@@ -73,16 +74,16 @@
           <!-- Please enter a valid email address -->
         </div>
 
-        <div class="contact-form__input4 form-input">
+        <div class="contact-form__input4 form-input" id="queryType">
           <p>Query Type <span class="contact-form__asterisk">*</span></p>
           <div class="input-box">
-            <label for="generalEnquiry">
+            <label for="general-enquiry">
               <div class="contact-form__input4__label__row">
                 <input
                   type="radio"
-                  name="queryType"
-                  value="generalEnquiry"
-                  id="generalEnquiry"
+                  name="query-type"
+                  value="general-enquiry"
+                  id="general-enquiry"
                 />
                 <span class="radio_btn_circle"></span>
                 General Enquiry
@@ -91,13 +92,13 @@
             <!-- This field is required -->
           </div>
           <div class="input-box">
-            <label for="supportRequest">
+            <label for="support-request">
               <div class="contact-form__input4__label__row">
                 <input
                   type="radio"
-                  name="queryType"
-                  value="supportRequest"
-                  id="supportRequest"
+                  name="query-type"
+                  value="support-request"
+                  id="support-request"
                 />
                 <span class="radio_btn_circle"></span>
                 Support Request

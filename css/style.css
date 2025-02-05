@@ -154,8 +154,10 @@ textarea:invalid:not(:placeholder-shown) {
 }
 
 .error-message {
+  height: 1rem;
   color: var(--red);
   margin-top: 8px;
+  display: none;
 }
 
 /* END ERROR VALIDATION */
