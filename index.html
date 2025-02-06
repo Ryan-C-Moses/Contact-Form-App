@@ -32,14 +32,7 @@
           <label for="first-name"
             >First Name <span class="contact-form__asterisk">*</span></label
           >
-          <input
-            class="input-box"
-            type="text"
-            id="first-name"
-            placeholder=""
-            required
-            pattern="^(?!\s*$).+"
-          />
+          <input class="input-box" type="text" id="first-name" />
           <p class="error-message" id="fname-error">This field is required</p>
         </div>
 
@@ -47,14 +40,7 @@
           <label for="last-name"
             >Last Name <span class="contact-form__asterisk">*</span></label
           >
-          <input
-            class="input-box"
-            type="text"
-            id="last-name"
-            placeholder=""
-            required
-            pattern="^(?!\s*$).+"
-          />
+          <input class="input-box" type="text" id="last-name" />
           <p class="error-message" id="lname-error">This field is required</p>
         </div>
 
@@ -67,11 +53,8 @@
             type="email"
             id="email"
             autocomplete="email"
-            placeholder=""
-            required
-            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
           />
-          <!-- Please enter a valid email address -->
+          <p class="error-message" id="email-error">Please enter a valid email address</p>
         </div>
 
         <div class="contact-form__input4 form-input" id="queryType">
@@ -112,13 +95,13 @@
           <label for="message"
             >Message <span class="contact-form__asterisk">*</span></label
           >
-          <textarea id="message" placeholder="" required></textarea>
+          <textarea id="message" placeholder=""></textarea>
           <!-- This field is required -->
         </div>
 
         <div class="contact-form__input6 form-input">
           <label for="consent">
-            <input type="checkbox" id="consent" required />
+            <input type="checkbox" id="consent" />
             <span class="radio_btn_checkbox"></span>
             I consent to being contacted by the team
           </label>

@@ -12,19 +12,66 @@ const validateForm = () => {
     const message = document.getElementById("message");
     const consent = document.getElementById("consent");
 
-    if (!fname.checkValidity()) {
-      // Set a custom validation message if the first name is invalid
-      fname.setCustomValidity("Please enter a valid text.");
-    } else {
-      // Clear the custom validation message if the first name is valid
-      fname.setCustomValidity("");
-    }
+    // Validate the first name
+    handleFirstNameChange(fname);
+    handleLastNameChange(lname);
+    handleEmailChange(email);
 
     // Check if the form is valid before submitting
-    if (this.checkValidity()) {
+    if (true) {
       this.submit();
     }
   });
+};
+
+const handleFirstNameChange = (el) => {
+  const regex = /^[A-Za-z]+$/;
+  const err = document.getElementById("fname-error");
+
+  el.addEventListener("input", () => validate(regex, el, err));
+  validate(regex, el, err); // Initial validation check
+};
+
+const handleLastNameChange = (el) => {
+  const regex = /^[A-Za-z]+$/;
+  const err = document.getElementById("lname-error");
+
+  el.addEventListener("input", () => validate(regex, el, err));
+  validate(regex, el, err); // Initial validation check
+};
+
+const handleEmailChange = (el) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const err = document.getElementById("email-error");
+
+  const validateEmail = (e) => {
+    if (regex.test(e.target.value)) {
+      err.style.display = "none";
+      el.classList.remove("error-input");
+    } else {
+      err.style.display = "block";
+      el.classList.add("error-input");
+    }
+  };
+
+  el.addEventListener("change", validateEmail);
+  validate(regex, el, err); // Initial validation check
+};
+
+const handleQueryTypeChange = (el) => {};
+
+const handleMessageChange = (el) => {};
+
+const handleConsentChange = (el) => {};
+
+const validate = (regex, el, err) => {
+  if (regex.test(el.value)) {
+    err.style.display = "none";
+    el.classList.remove("error-input");
+  } else {
+    err.style.display = "block";
+    el.classList.add("error-input");
+  }
 };
 
 export default validateForm;

@@ -149,6 +149,18 @@ textarea:invalid:not(:placeholder-shown) {
   border: solid 1px var(--red);
 } */
 
+#fname-error {
+  display: none;
+}
+
+#lname-error {
+  display: none;
+}
+
+#email-error {
+  display: none;
+}
+
 .error-input {
   border: solid 1px var(--red);
 }
@@ -157,7 +169,6 @@ textarea:invalid:not(:placeholder-shown) {
   height: 1rem;
   color: var(--red);
   margin-top: 8px;
-  display: none;
 }
 
 /* END ERROR VALIDATION */
