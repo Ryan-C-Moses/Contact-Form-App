@@ -161,15 +161,19 @@ textarea:invalid:not(:placeholder-shown) {
   display: none;
 }
 
-.error-input {
-  border: solid 1px var(--red);
+#query-type-error {
+  display: none;
 }
 
-.error-message {
-  height: 1rem;
-  color: var(--red);
-  margin-top: 8px;
+#message-error {
+  display: none;
 }
+
+#consent-error {
+  display: none;
+}
+
+/* classes for error validation are at the EOF */
 
 /* END ERROR VALIDATION */
 
@@ -315,9 +319,8 @@ textarea:invalid:not(:placeholder-shown) {
 
 .contact-form__input6 {
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-top: 40px;
   margin-bottom: 40px;
   border: none;
@@ -402,4 +405,16 @@ textarea:invalid:not(:placeholder-shown) {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* ERROR VALIDATION CLASSES */
+
+.error-input {
+  border: solid 1px var(--red) !important;
+}
+
+.error-message {
+  height: 1rem;
+  color: var(--red);
+  margin-top: 8px;
 }

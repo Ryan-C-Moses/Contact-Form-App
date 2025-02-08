@@ -16,6 +16,9 @@ const validateForm = () => {
     handleFirstNameChange(fname);
     handleLastNameChange(lname);
     handleEmailChange(email);
+    handleQueryTypeChange(queryType);
+    handleMessageChange(message);
+    handleConsentChange(consent);
 
     // Check if the form is valid before submitting
     if (true) {
@@ -58,11 +61,32 @@ const handleEmailChange = (el) => {
   validate(regex, el, err); // Initial validation check
 };
 
-const handleQueryTypeChange = (el) => {};
+const handleQueryTypeChange = (el) => {
+  const generalEnquiry = document.getElementById("general-enquiry");
+  const supportRequest = document.getElementById("support-request");
 
-const handleMessageChange = (el) => {};
+  const div1 = el.children[1];
+  const div2 = el.children[2];
 
-const handleConsentChange = (el) => {};
+  if (!(generalEnquiry.checked || supportRequest.checked)) {
+    document.getElementById("query-type-error").style.display = "block";
+    div1.classList.add("error-input");
+    div2.classList.add("error-input");
+  }
+};
+
+const handleMessageChange = (el) => {
+    if (el.value.length < 1) {
+      document.getElementById("message-error").style.display = "block";
+      el.classList.add("error-input");
+    }
+};
+
+const handleConsentChange = (el) => {
+    if (!el.checked) {
+        document.getElementById("consent-error").style.display = "block";
+    }
+};
 
 const validate = (regex, el, err) => {
   if (regex.test(el.value)) {

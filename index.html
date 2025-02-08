@@ -57,7 +57,7 @@
           <p class="error-message" id="email-error">Please enter a valid email address</p>
         </div>
 
-        <div class="contact-form__input4 form-input" id="queryType">
+        <div class="contact-form__input4 form-input" id="query-type">
           <p>Query Type <span class="contact-form__asterisk">*</span></p>
           <div class="input-box">
             <label for="general-enquiry">
@@ -72,7 +72,6 @@
                 General Enquiry
               </div>
             </label>
-            <!-- This field is required -->
           </div>
           <div class="input-box">
             <label for="support-request">
@@ -87,8 +86,8 @@
                 Support Request
               </div>
             </label>
-            <!-- Please select a query type -->
           </div>
+          <p class="error-message" id="query-type-error">Please select a query type</p>
         </div>
 
         <div class="contact-form__input5 form-input">
@@ -96,7 +95,7 @@
             >Message <span class="contact-form__asterisk">*</span></label
           >
           <textarea id="message" placeholder=""></textarea>
-          <!-- This field is required -->
+          <p class="error-message" id="message-error">This field is required</p>
         </div>
 
         <div class="contact-form__input6 form-input">
@@ -105,7 +104,7 @@
             <span class="radio_btn_checkbox"></span>
             I consent to being contacted by the team
           </label>
-          <!-- To submit this form, please consent to being contacted -->
+          <p class="error-message" id="consent-error">To submit this form, please consent to being contacted</p>
         </div>
 
         <button class="contact-form__button" type="submit">Submit</button>
