@@ -1,3 +1,5 @@
+// Initial Logic to Validate the Form
+
 const validateForm = () => {
   const form = document.getElementById("contact-form-id");
   form.addEventListener("submit", function (event) {
