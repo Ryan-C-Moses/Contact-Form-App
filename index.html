@@ -18,6 +18,14 @@
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
+    <template id="modal-template">
+      <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Modal content goes here...</p>
+        </div>
+      </div>
+    </template>
     <!-- <div>
       Success-State 
        Message Sent!
@@ -54,7 +62,9 @@
             id="email"
             autocomplete="email"
           />
-          <p class="error-message" id="email-error">Please enter a valid email address</p>
+          <p class="error-message" id="email-error">
+            Please enter a valid email address
+          </p>
         </div>
 
         <div class="contact-form__input4 form-input" id="query-type">
@@ -87,7 +97,9 @@
               </div>
             </label>
           </div>
-          <p class="error-message" id="query-type-error">Please select a query type</p>
+          <p class="error-message" id="query-type-error">
+            Please select a query type
+          </p>
         </div>
 
         <div class="contact-form__input5 form-input">
@@ -104,7 +116,9 @@
             <span class="radio_btn_checkbox"></span>
             I consent to being contacted by the team
           </label>
-          <p class="error-message" id="consent-error">To submit this form, please consent to being contacted</p>
+          <p class="error-message" id="consent-error">
+            To submit this form, please consent to being contacted
+          </p>
         </div>
 
         <button class="contact-form__button" type="submit">Submit</button>
