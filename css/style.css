@@ -177,6 +177,23 @@ textarea:invalid:not(:placeholder-shown) {
 
 /* END ERROR VALIDATION */
 
+.modal {
+  background-color: var(--grey-900-darker);
+  border: solid 2px red;
+  position: absolute;
+  min-width: 275px;
+  max-width: 400px;
+  color: var(--white);
+}
+
+.modal.centered {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
 .form-input {
   display: flex;
   flex-direction: column;
