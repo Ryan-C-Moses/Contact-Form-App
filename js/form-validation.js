@@ -1,33 +1,85 @@
 // Initial Logic to Validate the Form
 
-const validateForm = () => {
-  const form = document.getElementById("contact-form-id");
-  form.addEventListener("submit", function (event) {
-    // Prevent the default form submission
-    event.preventDefault();
+const validateForm = (event) => {
+  // Prevent the default form submission
+  event.preventDefault();
 
-    // Custom validation logic
-    const fname = document.getElementById("first-name");
-    const lname = document.getElementById("last-name");
-    const email = document.getElementById("email");
-    const queryType = document.getElementById("query-type");
-    const message = document.getElementById("message");
-    const consent = document.getElementById("consent");
+  // Gather form elements
+  const fname = document.getElementById("first-name");
+  const lname = document.getElementById("last-name");
+  const email = document.getElementById("email");
+  const queryType = document.getElementById("query-type");
+  const message = document.getElementById("message");
+  const consent = document.getElementById("consent");
 
-    // Validate the first name
-    handleFirstNameChange(fname);
-    handleLastNameChange(lname);
-    handleEmailChange(email);
-    handleQueryTypeChange(queryType);
-    handleMessageChange(message);
-    handleConsentChange(consent);
+  // Validate form fields
+  handleFirstNameChange(fname);
+  handleLastNameChange(lname);
+  handleEmailChange(email);
+  handleQueryTypeChange(queryType);
+  handleMessageChange(message);
+  handleConsentChange(consent);
 
-    // Check if the form is valid before submitting
-    if (true) {
-      this.submit();
-    }
-  });
+  const checkForm = isFormValid(
+    fname,
+    lname,
+    email,
+    queryType,
+    message,
+    consent
+  );
+
+  // Check if the form is valid before submitting
+  if (checkForm) {
+    // If valid, submit the form
+    showSuccessMessaage();
+    hideSuccessMessage();
+  }
+
+  console.log("form submitted");
 };
+
+const isFormValid = (fname, lname, email, queryType, message, consent) => {
+  const generalEnquiry = document.getElementById("general-enquiry");
+  const supportRequest = document.getElementById("support-request");
+
+  const fnameValid = /^[A-Za-z]+$/.test(fname.value);
+  const lnameValid = /^[A-Za-z]+$/.test(lname.value);
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+  const queryTypeValid =
+    generalEnquiry.checked || supportRequest.checked;
+  const messageValid = message.value.trim().length > 0;
+  const consentValid = consent.checked;
+
+  return (
+    fnameValid &&
+    lnameValid &&
+    emailValid &&
+    queryTypeValid &&
+    messageValid &&
+    consentValid
+  );
+};
+
+const showSuccessMessaage = () => {
+  // Select the template
+  const template = document.getElementById("modal-template");
+
+  // Clone the content
+  const modalClone = template.content.cloneNode(true);
+
+  // Append the cloned content to the body or another container
+  document.body.append(modalClone);
+};
+
+const hideSuccessMessage = () => {
+  // Select the template
+  const modal = document.querySelector('div.modal.centered');
+
+  setTimeout(() => {
+    modal.remove();
+  }, 4000);
+}
 
 const handleFirstNameChange = (el) => {
   const regex = /^[A-Za-z]+$/;
@@ -78,16 +130,16 @@ const handleQueryTypeChange = (el) => {
 };
 
 const handleMessageChange = (el) => {
-    if (el.value.length < 1) {
-      document.getElementById("message-error").style.display = "block";
-      el.classList.add("error-input");
-    }
+  if (el.value.length < 1) {
+    document.getElementById("message-error").style.display = "block";
+    el.classList.add("error-input");
+  }
 };
 
 const handleConsentChange = (el) => {
-    if (!el.checked) {
-        document.getElementById("consent-error").style.display = "block";
-    }
+  if (!el.checked) {
+    document.getElementById("consent-error").style.display = "block";
+  }
 };
 
 const validate = (regex, el, err) => {
