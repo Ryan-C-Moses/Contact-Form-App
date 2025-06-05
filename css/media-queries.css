@@ -1,0 +1,21 @@
+/* Mobile first approach */
+
+/* Small Tablet */
+@media (min-width: 600px) {
+
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+    
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+    
+}
