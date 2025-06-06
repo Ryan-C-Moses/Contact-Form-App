@@ -1,12 +1,7 @@
-import validateForm from './form-validation.js';
+'use strict';
 
-// variables
-const form = document.getElementById("contact-form-id");
+import { form, validateForm } from "./form-validation.js";
+import registerEventComponents from "./bootstrap.js";
 
-// Ensure the DOM is fully loaded before setting up form validation
-document.addEventListener('DOMContentLoaded', () => {
-  // Call the validateForm function to set up form validation
-  // validateForm();
-});
-
-form.addEventListener("submit", validateForm)
+registerEventComponents();
+form.addEventListener("submit", validateForm);

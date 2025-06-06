@@ -1,51 +1,41 @@
+"use strict";
+
 // Gather form elements
-const fname = document.getElementById("first-name");
-const lname = document.getElementById("last-name");
-const email = document.getElementById("email");
-const queryType = document.getElementById("query-type");
-const message = document.getElementById("message");
-const consent = document.getElementById("consent");
-const generalEnquiry = document.getElementById("general-enquiry");
-const supportRequest = document.getElementById("support-request");
-const [querytype1, querytype2] = queryType.children[1].children;
+export const form = document.getElementById("contact-form-id");
+export const fname = document.getElementById("first-name");
+export const lname = document.getElementById("last-name");
+export const email = document.getElementById("email");
+export const message = document.getElementById("message");
+export const consent = document.getElementById("consent");
+export const queryTypes = document.querySelectorAll(
+  'input[name="query-type"]'
+);
+export const generalEnquiry = document.getElementById("general-enquiry");
+export const supportRequest = document.getElementById("support-request");
+export const queryType = document.getElementById("query-type");
+export const [queryType1, queryType2] = queryType.children[1].children;
 
-const fNameErr = document.getElementById("fname-error");
-const lNameErr = document.getElementById("lname-error");
-const emailErr = document.getElementById("email-error");
+export const fNameErr = document.getElementById("fname-error");
+export const lNameErr = document.getElementById("lname-error");
+export const emailErr = document.getElementById("email-error");
+export const queryErr = document.getElementById("query-type-error");
+export const messageErr = document.getElementById("message-error");
+export const consentErr = document.getElementById("consent-error");
 
-const nameRegex = /^[A-Za-z]+$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const nameRegex = /^[A-Za-z]+$/;
+export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const registerEventListeners = () => {
-  fname.addEventListener("input", (evt) =>
-    validate(nameRegex, fname, fNameErr)
-  );
-  lname.addEventListener("input", (evt) =>
-    validate(nameRegex, lname, lNameErr)
-  );
-  email.addEventListener("input", (evt) =>
-    validate(emailRegex, email, emailErr)
-  );
-  message.addEventListener("input", (evt) => {
-    const input = evt.target.value;
-    if (input < 1) {
-      document.getElementById("message-error").style.display = "block";
-      el.classList.add("error-input");
-    }
-  });
-};
-
-const validateForm = (event) => {
+export const validateForm = (event) => {
   // Prevent the default form submission
   event.preventDefault();
 
   // Validate form fields
-  validateFirstNameChange();
-  validateLastNameChange();
-  validateEmailChange();
-  validateQueryTypeChange();
-  validateMessageChange();
-  validateConsentChange();
+  validateFirstName();
+  validateLastName();
+  validateEmail();
+  validateQueryType();
+  validateMessage();
+  validateConsent();
 
   const checkForm = isFormValid(fname, lname, email, message, consent);
 
@@ -100,41 +90,40 @@ const hideSuccessMessage = () => {
   }, 4000);
 };
 
-const validateFirstNameChange = () => {
-  validate(nameRegex, fname, fNameErr);
+const validateFirstName = () => {
+  validateOnSubmit(nameRegex, fname, fNameErr);
 };
 
-const validateLastNameChange = () => {
-  validate(nameRegex, lname, lNameErr);
+const validateLastName = () => {
+  validateOnSubmit(nameRegex, lname, lNameErr);
 };
 
-const validateEmailChange = () => {
-  validate(emailRegex, email, emailErr);
+const validateEmail = () => {
+  validateOnSubmit(emailRegex, email, emailErr);
 };
 
-const validateQueryTypeChange = () => {
+const validateQueryType = () => {
   if (!(generalEnquiry.checked || supportRequest.checked)) {
-    document.getElementById("query-type-error").style.display = "block";
-    querytype1.classList.add("error-input");
-    querytype2.classList.add("error-input");
+    queryErr.style.display = "block";
+    queryType1.classList.add("error-input");
+    queryType2.classList.add("error-input");
   }
 };
 
-const validateMessageChange = () => {
+const validateMessage = () => {
   if (message.value.length < 1) {
-    document.getElementById("message-error").style.display = "block";
+    messageErr.style.display = "block";
     message.classList.add("error-input");
   }
 };
 
-const validateConsentChange = () => {
+const validateConsent = () => {
   if (!consent.checked) {
-    document.getElementById("consent-error").style.display = "block";
+    consentErr.style.display = "block";
   }
 };
 
-const validate = (regex, el, err) => {
-  console.log(el.value);
+const validateOnSubmit = (regex, el, err) => {
   if (regex.test(el.value)) {
     err.style.display = "none";
     el.classList.remove("error-input");
@@ -143,5 +132,3 @@ const validate = (regex, el, err) => {
     el.classList.add("error-input");
   }
 };
-
-export default validateForm;
