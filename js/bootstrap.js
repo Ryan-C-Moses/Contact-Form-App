@@ -1,8 +1,8 @@
 "use strict";
 
 import {
-  fname,
-  lname,
+  fName,
+  lName,
   email,
   message,
   queryTypes,
@@ -20,11 +20,11 @@ import {
 } from "./form-validation.js";
 
 const registerEventComponents = () => {
-  fname.addEventListener("input", (evt) => {
-    validateOnChange(nameRegex, evt, fname, fNameErr);
+  fName.addEventListener("input", (evt) => {
+    validateOnChange(nameRegex, evt, fName, fNameErr);
   });
-  lname.addEventListener("input", (evt) =>
-    validateOnChange(nameRegex, evt, lname, lNameErr)
+  lName.addEventListener("input", (evt) =>
+    validateOnChange(nameRegex, evt, lName, lNameErr)
   );
   email.addEventListener("input", (evt) =>
     validateOnChange(emailRegex, evt, email, emailErr)
