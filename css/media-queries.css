@@ -68,6 +68,11 @@
   .contact-form__button {
     margin-bottom: 10px;
   }
+
+  .error-message {
+    height: auto;
+    margin-top: 4px;
+  }
 }
 
 /* Desktop */
