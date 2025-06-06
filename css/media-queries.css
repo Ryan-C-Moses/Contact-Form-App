@@ -19,8 +19,13 @@
 /* Laptop */
 @media (min-width: 1024px) {
   main {
+    min-height: 700px;
     width: 65%;
     max-width: 800px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .contact-form__nameboxes {
@@ -35,6 +40,33 @@
 
   .contact-form__input2 {
     width: 48%;
+  }
+
+  .contact-form__query-type-boxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-form__query-type-boxes .input-box:first-child {
+    margin-bottom: 0px;
+  }
+
+  .contact-form__query-type-boxes .input-box {
+    width: 48%;
+  }
+
+  .contact-form__input5 textarea {
+    height: 130px;
+  }
+
+  .contact-form__input6 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .contact-form__button {
+    margin-bottom: 10px;
   }
 }
 

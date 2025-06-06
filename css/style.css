@@ -257,8 +257,16 @@ textarea:invalid:not(:placeholder-shown) {
   margin-bottom: 10px;
 }
 
-.contact-form__input4 > div:nth-child(2) {
+.contact-form__query-type-boxes {
+  display: block;
+}
+
+.contact-form__query-type-boxes .input-box:first-child {
   margin-bottom: 20px;
+}
+
+.contact-form__query-type-boxes .input-box {
+  width: auto;
 }
 
 .contact-form__input4 div label {
