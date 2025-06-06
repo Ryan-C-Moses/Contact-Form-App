@@ -13,12 +13,12 @@ const validateForm = (event) => {
   const consent = document.getElementById("consent");
 
   // Validate form fields
-  handleFirstNameChange(fname);
-  handleLastNameChange(lname);
-  handleEmailChange(email);
-  handleQueryTypeChange(queryType);
-  handleMessageChange(message);
-  handleConsentChange(consent);
+  validateFirstNameChange(fname);
+  validateLastNameChange(lname);
+  validateEmailChange(email);
+  validateQueryTypeChange(queryType);
+  validateMessageChange(message);
+  validateConsentChange(consent);
 
   const checkForm = isFormValid(
     fname,
@@ -46,8 +46,7 @@ const isFormValid = (fname, lname, email, queryType, message, consent) => {
   const fnameValid = /^[A-Za-z]+$/.test(fname.value);
   const lnameValid = /^[A-Za-z]+$/.test(lname.value);
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
-  const queryTypeValid =
-    generalEnquiry.checked || supportRequest.checked;
+  const queryTypeValid = generalEnquiry.checked || supportRequest.checked;
   const messageValid = message.value.trim().length > 0;
   const consentValid = consent.checked;
 
@@ -74,14 +73,14 @@ const showSuccessMessaage = () => {
 
 const hideSuccessMessage = () => {
   // Select the template
-  const modal = document.querySelector('div.modal.centered');
+  const modal = document.querySelector("div.modal.centered");
 
   setTimeout(() => {
     modal.remove();
   }, 4000);
-}
+};
 
-const handleFirstNameChange = (el) => {
+const validateFirstNameChange = (el) => {
   const regex = /^[A-Za-z]+$/;
   const err = document.getElementById("fname-error");
 
@@ -89,7 +88,7 @@ const handleFirstNameChange = (el) => {
   validate(regex, el, err); // Initial validation check
 };
 
-const handleLastNameChange = (el) => {
+const validateLastNameChange = (el) => {
   const regex = /^[A-Za-z]+$/;
   const err = document.getElementById("lname-error");
 
@@ -97,7 +96,7 @@ const handleLastNameChange = (el) => {
   validate(regex, el, err); // Initial validation check
 };
 
-const handleEmailChange = (el) => {
+const validateEmailChange = (el) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const err = document.getElementById("email-error");
 
@@ -115,7 +114,7 @@ const handleEmailChange = (el) => {
   validate(regex, el, err); // Initial validation check
 };
 
-const handleQueryTypeChange = (el) => {
+const validateQueryTypeChange = (el) => {
   const generalEnquiry = document.getElementById("general-enquiry");
   const supportRequest = document.getElementById("support-request");
 
@@ -129,14 +128,22 @@ const handleQueryTypeChange = (el) => {
   }
 };
 
-const handleMessageChange = (el) => {
+const validateMessageChange = (el) => {
   if (el.value.length < 1) {
     document.getElementById("message-error").style.display = "block";
     el.classList.add("error-input");
   }
+
+  el.addEventListener("input", (evt) => {
+    const input = evt.target.value;
+    if (input < 1) {
+      document.getElementById("message-error").style.display = "block";
+      el.classList.add("error-input");
+    }
+  });
 };
 
-const handleConsentChange = (el) => {
+const validateConsentChange = (el) => {
   if (!el.checked) {
     document.getElementById("consent-error").style.display = "block";
   }
