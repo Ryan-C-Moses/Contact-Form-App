@@ -7,9 +7,7 @@ export const lName = document.getElementById("last-name");
 export const email = document.getElementById("email");
 export const message = document.getElementById("message");
 export const consent = document.getElementById("consent");
-export const queryTypes = document.querySelectorAll(
-  'input[name="query-type"]'
-);
+export const queryTypes = document.querySelectorAll('input[name="query-type"]');
 export const generalEnquiry = document.getElementById("general-enquiry");
 export const supportRequest = document.getElementById("support-request");
 export const queryType = document.getElementById("query-type");
@@ -44,9 +42,9 @@ export const validateForm = (event) => {
     // If valid, submit the form
     showSuccessMessaage();
     hideSuccessMessage();
+    clearForm();
   }
 
-  clearForm();
   console.log("form submitted");
 };
 
@@ -142,4 +140,4 @@ const clearForm = () => {
   supportRequest.checked = false;
   message.value = "";
   consent.checked = false;
-}
+};
