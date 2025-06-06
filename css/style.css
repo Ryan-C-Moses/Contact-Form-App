@@ -224,13 +224,25 @@ textarea:invalid:not(:placeholder-shown) {
   margin-bottom: 20px;
 }
 
+.contact-form__nameboxes {
+  display: block;
+}
+
 .contact-form__asterisk {
   color: var(--green-600-medium);
   display: inline;
 }
 
+.contact-form__input1 {
+  width: auto;
+}
+
 .contact-form__input1 label {
   margin-bottom: 10px;
+}
+
+.contact-form__input2 {
+  width: auto;
 }
 
 .contact-form__input2 label {
