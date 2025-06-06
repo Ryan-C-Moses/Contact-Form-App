@@ -2,8 +2,8 @@
 
 // Gather form elements
 export const form = document.getElementById("contact-form-id");
-export const fname = document.getElementById("first-name");
-export const lname = document.getElementById("last-name");
+export const fName = document.getElementById("first-name");
+export const lName = document.getElementById("last-name");
 export const email = document.getElementById("email");
 export const message = document.getElementById("message");
 export const consent = document.getElementById("consent");
@@ -37,7 +37,7 @@ export const validateForm = (event) => {
   validateMessage();
   validateConsent();
 
-  const checkForm = isFormValid(fname, lname, email, message, consent);
+  const checkForm = isFormValid(fName, lName, email, message, consent);
 
   // Check if the form is valid before submitting
   if (checkForm) {
@@ -46,23 +46,24 @@ export const validateForm = (event) => {
     hideSuccessMessage();
   }
 
+  clearForm();
   console.log("form submitted");
 };
 
-const isFormValid = (fname, lname, email, message, consent) => {
+const isFormValid = (fName, lName, email, message, consent) => {
   const generalEnquiry = document.getElementById("general-enquiry");
   const supportRequest = document.getElementById("support-request");
 
-  const fnameValid = /^[A-Za-z]+$/.test(fname.value);
-  const lnameValid = /^[A-Za-z]+$/.test(lname.value);
+  const fNameValid = /^[A-Za-z]+$/.test(fName.value);
+  const lNameValid = /^[A-Za-z]+$/.test(lName.value);
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
   const queryTypeValid = generalEnquiry.checked || supportRequest.checked;
   const messageValid = message.value.trim().length > 0;
   const consentValid = consent.checked;
 
   return (
-    fnameValid &&
-    lnameValid &&
+    fNameValid &&
+    lNameValid &&
     emailValid &&
     queryTypeValid &&
     messageValid &&
@@ -91,11 +92,11 @@ const hideSuccessMessage = () => {
 };
 
 const validateFirstName = () => {
-  validateOnSubmit(nameRegex, fname, fNameErr);
+  validateOnSubmit(nameRegex, fName, fNameErr);
 };
 
 const validateLastName = () => {
-  validateOnSubmit(nameRegex, lname, lNameErr);
+  validateOnSubmit(nameRegex, lName, lNameErr);
 };
 
 const validateEmail = () => {
@@ -132,3 +133,13 @@ const validateOnSubmit = (regex, el, err) => {
     el.classList.add("error-input");
   }
 };
+
+const clearForm = () => {
+  fName.value = "";
+  lName.value = "";
+  email.value = "";
+  generalEnquiry.checked = false;
+  supportRequest.checked = false;
+  message.value = "";
+  consent.checked = false;
+}
