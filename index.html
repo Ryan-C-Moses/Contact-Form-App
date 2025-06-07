@@ -37,14 +37,14 @@
     </template>
     <main>
       <h2 class="title">Contact Us</h2>
-      <form class="contact-form" id="contact-form-id" action="#">
+      <form class="contact-form" id="contact-form-id">
         <!-- Comments in this form are for validation -->
         <div class="contact-form__nameboxes">
           <div class="contact-form__input1 form-input">
             <label for="first-name"
               >First Name <span class="contact-form__asterisk">*</span></label
             >
-            <input class="input-box" type="text" id="first-name" />
+            <input class="input-box" type="text" id="first-name" name="firstName" />
             <p class="error-message" id="fname-error">This field is required</p>
           </div>
 
@@ -52,7 +52,7 @@
             <label for="last-name"
               >Last Name <span class="contact-form__asterisk">*</span></label
             >
-            <input class="input-box" type="text" id="last-name" />
+            <input class="input-box" type="text" id="last-name" name="lastName" />
             <p class="error-message" id="lname-error">This field is required</p>
           </div>
         </div>
@@ -66,6 +66,7 @@
             type="email"
             id="email"
             autocomplete="email"
+            name="email"
           />
           <p class="error-message" id="email-error">
             Please enter a valid email address
@@ -80,7 +81,7 @@
                 <div class="contact-form__input4__label__row">
                   <input
                     type="radio"
-                    name="query-type"
+                    name="queryType"
                     value="general-enquiry"
                     id="general-enquiry"
                   />
@@ -94,7 +95,7 @@
                 <div class="contact-form__input4__label__row">
                   <input
                     type="radio"
-                    name="query-type"
+                    name="queryType"
                     value="support-request"
                     id="support-request"
                   />
@@ -113,13 +114,13 @@
           <label for="message"
             >Message <span class="contact-form__asterisk">*</span></label
           >
-          <textarea id="message" placeholder=""></textarea>
+          <textarea id="message" placeholder="" name="message"></textarea>
           <p class="error-message" id="message-error">This field is required</p>
         </div>
 
         <div class="contact-form__input6 form-input">
           <label for="consent">
-            <input type="checkbox" id="consent" />
+            <input type="checkbox" id="consent" name="consent" />
             <span class="radio_btn_checkbox"></span>
             I consent to being contacted by the team
           </label>
