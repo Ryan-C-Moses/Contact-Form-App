@@ -1,5 +1,7 @@
 "use strict";
 
+import submitForm from "./api.js";
+
 // Gather form elements
 export const form = document.getElementById("contact-form-id");
 export const fName = document.getElementById("first-name");
@@ -23,29 +25,33 @@ export const consentErr = document.getElementById("consent-error");
 export const nameRegex = /^[A-Za-z]+$/;
 export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const validateForm = (event) => {
+export const onFormSubmit = async (event) => {
   // Prevent the default form submission
   event.preventDefault();
 
-  // Validate form fields
-  validateFirstName();
-  validateLastName();
-  validateEmail();
-  validateQueryType();
-  validateMessage();
-  validateConsent();
+  try {
+    // Validate form fields
+    validateFirstName();
+    validateLastName();
+    validateEmail();
+    validateQueryType();
+    validateMessage();
+    validateConsent();
 
-  const checkForm = isFormValid(fName, lName, email, message, consent);
+    const checkForm = isFormValid(fName, lName, email, message, consent);
 
-  // Check if the form is valid before submitting
-  if (checkForm) {
-    // If valid, submit the form
-    showSuccessMessaage();
-    hideSuccessMessage();
-    clearForm();
+    // Check if the form is valid before submitting
+    if (checkForm) {
+      await submitForm(form);
+
+      showSuccessMessaage();
+      hideSuccessMessage();
+      clearForm();
+    }
+  } catch (error) {
+    console.error(error.message);
+    console.error(error);
   }
-
-  console.log("form submitted");
 };
 
 const isFormValid = (fName, lName, email, message, consent) => {
@@ -120,6 +126,7 @@ const validateConsent = () => {
   if (!consent.checked) {
     consentErr.style.display = "block";
   }
+  consent.value = true;
 };
 
 const validateOnSubmit = (regex, el, err) => {

@@ -37,7 +37,7 @@
     </template>
     <main>
       <h2 class="title">Contact Us</h2>
-      <form class="contact-form" id="contact-form-id" action="#">
+      <form class="contact-form" id="contact-form-id">
         <!-- Comments in this form are for validation -->
         <div class="contact-form__nameboxes">
           <div class="contact-form__input1 form-input">
@@ -81,10 +81,9 @@
                 <div class="contact-form__input4__label__row">
                   <input
                     type="radio"
-                    name="query-type"
+                    name="queryType"
                     value="general-enquiry"
                     id="general-enquiry"
-                    name="generalEnquiry"
                   />
                   <span class="radio_btn_circle"></span>
                   General Enquiry
@@ -96,10 +95,9 @@
                 <div class="contact-form__input4__label__row">
                   <input
                     type="radio"
-                    name="query-type"
+                    name="queryType"
                     value="support-request"
                     id="support-request"
-                    name="supportRequest"
                   />
                   <span class="radio_btn_circle"></span>
                   Support Request
@@ -122,7 +120,7 @@
 
         <div class="contact-form__input6 form-input">
           <label for="consent">
-            <input type="checkbox" id="consent" name="consent"/>
+            <input type="checkbox" id="consent" name="consent" />
             <span class="radio_btn_checkbox"></span>
             I consent to being contacted by the team
           </label>
