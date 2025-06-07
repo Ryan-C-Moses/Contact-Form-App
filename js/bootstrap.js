@@ -5,7 +5,6 @@ import {
   lName,
   email,
   message,
-  queryTypes,
   queryType1,
   queryType2,
   consent,
@@ -52,6 +51,8 @@ const registerEventComponents = () => {
 };
 
 const handleQueryChange = () => {
+  const queryTypes = document.querySelectorAll('input[name="queryType"]');
+
   const arr = Array.from(queryTypes);
   for (const query of arr) {
     query.addEventListener("change", (evt) => {
